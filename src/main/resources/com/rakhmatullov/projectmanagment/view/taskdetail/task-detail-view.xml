@@ -37,7 +37,7 @@
             <datePicker id="dueDateField" property="dueDate"/>
             <comboBox id="priorityField" property="priority"/>
             <textField id="estimationField" property="estimation"/>
-            <textArea id="descriptionField" property="description" height="10px"/>
+            <textArea id="descriptionField" property="description" height="10px" valueChangeMode="EAGER"/>
         </formLayout>
         <hbox>
             <button id="saveAndCloseBtn" action="detailSaveClose"/>

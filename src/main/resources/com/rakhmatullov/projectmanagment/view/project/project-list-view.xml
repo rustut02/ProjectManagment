@@ -6,7 +6,9 @@
     <data>
         <collection id="projectsDc"
                     class="com.rakhmatullov.projectmanagment.entity.Project">
-            <fetchPlan extends="_base"/>
+            <fetchPlan extends="_base">
+                <property name="manager" fetchPlan="_instance_name"/>
+            </fetchPlan>
             <loader id="projectsDl" readOnly="true">
                 <query>
                     <![CDATA[select e from Project e]]>
@@ -49,6 +51,10 @@
             <columns resizable="true">
                 <column property="name"/>
                 <column property="description"/>
+                <column property="manager"/>
+                <column property="manager.firstName"/>
+                <column property="manager.lastName"/>
+                <column property="manager.username"/>
             </columns>
         </dataGrid>
         <hbox id="lookupActions" visible="false">

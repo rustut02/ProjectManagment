@@ -52,9 +52,6 @@
                 <column property="name"/>
                 <column property="description"/>
                 <column property="manager"/>
-                <column property="manager.firstName"/>
-                <column property="manager.lastName"/>
-                <column property="manager.username"/>
             </columns>
         </dataGrid>
         <hbox id="lookupActions" visible="false">

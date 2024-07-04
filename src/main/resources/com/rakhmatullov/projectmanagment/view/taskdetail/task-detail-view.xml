@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      title="msg://taskDetailView.title">
+    <data>
+        <instance id="taskDc" class="com.rakhmatullov.projectmanagment.entity.Task">
+            <loader id="taskDl"/>
+            <fetchPlan extends="_base">
+                <property name="assignee" fetchPlan="_instance_name"/>
+                <property name="project" fetchPlan="_instance_name"/>
+            </fetchPlan>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <actions>
+        <action id="detailClose" type="detail_close"/>
+        <action id="detailSaveClose" type="detail_saveClose"/>
+    </actions>
+    <layout>
+        <formLayout id="formLayout" dataContainer="taskDc">
+            <textField id="nameField" property="name"/>
+            <entityPicker id="projectField" property="project">
+                <actions>
+                    <action id="entityClear" type="entity_clear"/>
+                    <action id="entityLookup" type="entity_lookup"/>
+                    <action id="entityOpen" type="entity_open"/>
+                </actions>
+            </entityPicker>
+            <entityPicker id="assigneeField" property="assignee">
+                <actions>
+                    <action id="entityClear" type="entity_clear"/>
+                    <action id="entityLookup" type="entity_lookup"/>
+                    <action id="entityOpen" type="entity_open"/>
+                </actions>
+            </entityPicker>
+            <datePicker id="dueDateField" property="dueDate"/>
+            <comboBox id="priorityField" property="priority"/>
+            <textField id="estimationField" property="estimation"/>
+            <textArea id="descriptionField" property="description" height="10px"/>
+        </formLayout>
+        <hbox>
+            <button id="saveAndCloseBtn" action="detailSaveClose"/>
+            <button id="closeBtn" action="detailClose"/>
+        </hbox>
+    </layout>
+</view>

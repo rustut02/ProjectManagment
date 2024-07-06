@@ -9,7 +9,7 @@
                 <property name="project" fetchPlan="_instance_name"/>
             </fetchPlan>
         </instance>
-    </data>
+    </data>я
     <facets>
         <dataLoadCoordinator auto="true"/>
     </facets>

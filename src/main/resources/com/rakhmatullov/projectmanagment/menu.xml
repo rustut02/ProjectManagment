@@ -6,6 +6,9 @@
         <item view="Project.list" title="msg://com.rakhmatullov.projectmanagment.view.project/projectListView.title"/>
         <item view="TimeEntry.list"
               title="msg://com.rakhmatullov.projectmanagment.view.timeentry/timeEntryListView.title"/>
+        <item view="ProjectStats.list"
+              title="msg://com.rakhmatullov.projectmanagment.view.projectstats/projectStatsListView.title"/>
+        <item view="Task_.list" title="msg://com.rakhmatullov.projectmanagment.view.task/taskListView.title"/>
     </menu>
 
 </menu-config>

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Component
@@ -31,9 +32,17 @@ public class ProjectStatsService {
                     .stream()
                     .map(task -> Objects.requireNonNullElse(task.getEstimation(), 0))
                     .reduce(0, Integer::sum);
+            stat.setActualEfforts(getActualEfforts(project.getId()));
             stat.setPlannedEfforts(plannedEfforts);
             return stat;
         }).collect(Collectors.toList());
         return projectStats;
+    }
+
+    public Integer getActualEfforts(UUID projectId){
+        return dataManager.loadValue("select SUM(t.timeSpent) from TimeEntry t " +
+                "where t.task.project.id = :projectId", Integer.class)
+                .parameter("projectId", projectId)
+                .one();
     }
 }

@@ -9,7 +9,8 @@
                 <property name="project" fetchPlan="_instance_name"/>
             </fetchPlan>
         </instance>
-    </data>я
+    </data>
+    я
     <facets>
         <dataLoadCoordinator auto="true"/>
     </facets>
@@ -38,6 +39,8 @@
             <comboBox id="priorityField" property="priority"/>
             <textField id="estimationField" property="estimation"/>
             <textArea id="descriptionField" property="description" height="10px" valueChangeMode="EAGER"/>
+            <fileStorageUploadField id="attachmentField" property="attachment" clearButtonVisible="true"
+                                    fileNameVisible="true" uploadIcon="lumo:upload"/>
         </formLayout>
         <hbox>
             <button id="saveAndCloseBtn" action="detailSaveClose"/>
